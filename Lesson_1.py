@@ -16,7 +16,7 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..2,147,483,647].
 """
 
-def Binary_Gap(N):
+def solution(N):
 
     # input check
     if not isinstance(N,int):
@@ -42,4 +42,4 @@ def Binary_Gap(N):
 
     return gap
 
-print(Binary_Gap(0b10010001))
+print(solution(0b10010001))
