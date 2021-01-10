@@ -35,11 +35,17 @@ def solution(A):
     # input check
     if not isinstance(A,list):
         raise TypeError("First input must be an array")
-
-    for element in A:
-        if A.count(element) % 2 == 1:
-            return element
     
-    return -1
+    occurrences = {}
+    
+    for number in A:
+        if number not in occurrences:
+            occurrences[number] = 1
+        else:
+            occurrences[number] += 1
+
+    for number in occurrences:
+        if occurrences[number] % 2 == 1:
+            return number
 
 print(solution([1,1,2,2,3,3,4]))
