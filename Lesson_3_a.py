@@ -1,0 +1,63 @@
+'''
+A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.
+
+Count the minimal number of jumps that the small frog must perform to reach its target.
+
+Write a function:
+
+def solution(X, Y, D)
+
+that, given three integers X, Y and D, returns the minimal number of jumps from position X to a position equal to or greater than Y.
+
+For example, given:
+
+  X = 10
+  Y = 85
+  D = 30
+the function should return 3, because the frog will be positioned as follows:
+
+after the first jump, at position 10 + 30 = 40
+after the second jump, at position 10 + 30 + 30 = 70
+after the third jump, at position 10 + 30 + 30 + 30 = 100
+Write an efficient algorithm for the following assumptions:
+
+X, Y and D are integers within the range [1..1,000,000,000];
+X ≤ Y.
+'''
+import math
+
+def solution(X, Y, D):
+
+    ### Input Check
+
+    if not isinstance(X,int) and X < 1:
+        raise TypeError("Input 1 must be a positive integer")
+
+    if not isinstance(Y,int) and Y < 1:
+        raise TypeError("Input 2 must be a positive integer")
+
+    if not isinstance(D,int) and D < 1:
+        raise TypeError("Input 3 must be a positive integer")
+
+    if X > Y:
+        raise ValueError("Input 1 must be less than or equal to Input 2")
+
+    ### Method 1
+    
+    # jumps = 0
+
+    # while X < Y:
+    #     X += D
+    #     jumps += 1
+    
+    # print(jumps)
+    
+    ### Method 2
+
+    distance = Y - X
+    jumps = math.ceil((distance/D))
+    
+    return jumps
+
+print(solution(10,20,7))
+    

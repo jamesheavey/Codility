@@ -54,7 +54,7 @@ def solution(A):
     
     # missing_int = 0
     # for number in A:
-    #     missing_int ^= number
+    #     missing_int ^= number  # XOR
     # return missing_int
 
 print(solution([9,4,7,9,4]))
