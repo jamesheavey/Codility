@@ -35,9 +35,11 @@ def solution(A):
     # input check
     if not isinstance(A,list):
         raise TypeError("First input must be an array")
+
+    ### Method 1
     
     occurrences = {}
-    
+
     for number in A:
         if number not in occurrences:
             occurrences[number] = 1
@@ -48,4 +50,11 @@ def solution(A):
         if occurrences[number] % 2 == 1:
             return number
 
-print(solution([1,1,2,2,3,3,4]))
+    ### Method 2
+    
+    # missing_int = 0
+    # for number in A:
+    #     missing_int ^= number
+    # return missing_int
+
+print(solution([9,4,7,9,4]))
