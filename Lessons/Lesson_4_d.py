@@ -55,13 +55,13 @@ def solution(A):
     ### Method 1
 
     if len(A) != len(set(A)) or len(A) < 1:
-        return = 0
+        return 0
 
     A.sort()
 
     for idx,val in enumerate(A):
         if idx + 1 != val:
-            return = 0
+            return 0
 
     return 1
 
@@ -80,7 +80,7 @@ def solution(A):
 
     #         else:
     #             counter[element-1] = 1
-    
+
     # return 1
 
 print(solution([4,1,3,2]))
